@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 
   Cmd cmd = {0};
   cmd_append(&cmd, "cl", "/nologo", "/Zi", "..\\src\\win32_handmade.cpp");
-  cmd_append(&cmd, "user32.lib");
+  cmd_append(&cmd, "user32.lib", "gdi32.lib");
 
   if (!mkdir_if_not_exists(BUILD_FOLDER)) return 1;
   if (!set_current_dir(BUILD_FOLDER))     return 1;
